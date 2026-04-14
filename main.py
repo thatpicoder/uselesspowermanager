@@ -34,7 +34,6 @@ def on_restart():
 
 def on_sleep():
     try:
-        # Request sleep mode
         success = ctypes.windll.powrprof.SetSuspendState(False, True, True)
         if not success:
             raise OSError("SetSuspendState returned failure")
